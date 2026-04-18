@@ -19,3 +19,4 @@ Then Choose React, and JavaScript
 
 `npm i express nodemon dotenv cors bycrypt helmet jsonwebtoken mongoose morgan multer jsonwebtoken node-cron socket.io zod`
 
+2. In server Folder rename `.env.example` to `.env` and fill the detailes
