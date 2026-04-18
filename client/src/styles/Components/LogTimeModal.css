@@ -1,0 +1,42 @@
+/* LogTimeModal Styling */
+
+.at-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.at-input-field {
+  padding-left: 3rem !important;
+  width: 100%;
+}
+
+.at-icon-left {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 1px;
+  pointer-events: none;
+  z-index: 10;
+  color: #94A3B8;
+  transition: color 0.3s;
+}
+
+.at-input-wrapper:focus-within .at-icon-left {
+  color: #00D1FF;
+}
+
+.at-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #94A3B8;
+}
+
+.at-input-wrapper:focus-within .at-select-chevron {
+  color: #00D1FF;
+}

@@ -1,0 +1,115 @@
+/* Dashbord Theme & Component Styles */
+
+.health-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.health-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.insight-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Activity Feed */
+.activity-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.activity-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+}
+
+.activity-snippet {
+  margin-top: 0.75rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(0, 209, 255, 0.3);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Deadlines */
+.deadline-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.2s;
+}
+
+.deadline-row:hover {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.date-box {
+  background: #1A2332;
+  border-radius: 0.75rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Chart Bars */
+.chart-bar-container {
+  width: 100%;
+  max-width: 44px;
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chart-bar {
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.chart-bar.active {
+  background: var(--primary);
+  box-shadow: 0 4px 20px rgba(0, 209, 255, 0.4);
+}
+
+.chart-bar:hover:not(.active) {
+  background: #2D3748;
+}
+
+/* Middle Row - Task Completion + Upcoming Deadlines side by side */
+.middle-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .middle-row {
+    grid-template-columns: 1fr;
+  }
+}

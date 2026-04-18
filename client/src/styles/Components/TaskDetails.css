@@ -1,0 +1,264 @@
+/* TaskDetails Styling System */
+
+:root {
+  /* Colors */
+  --td-bg-main: #040911;
+  --td-bg-surface: #0b121e;
+  --td-bg-elevated: #161b22;
+  --td-accent-primary: #00d1ff;
+  --td-accent-glow: rgba(0, 209, 255, 0.4);
+  --td-accent-soft: rgba(0, 209, 255, 0.1);
+  --td-border-dim: rgba(255, 255, 255, 0.05);
+  --td-border-bright: rgba(255, 255, 255, 0.1);
+
+  /* Text */
+  --td-text-main: #e6edf3;
+  --td-text-muted: #94a3b8;
+  --td-text-dim: #484f58;
+
+  --td-glass-bg: rgba(11, 18, 30, 0.8);
+  --td-glass-blur: blur(16px);
+}
+
+/* Modal Backdrop */
+.td-backdrop {
+  background-color: rgba(4, 9, 17, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 2000 !important;
+}
+
+/* Glass Card Container */
+.td-card {
+  background: rgba(11, 18, 30, 0.75) !important;
+  backdrop-filter: blur(40px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 
+    0 40px 100px -20px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  border-radius: 40px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow Accent (Dynamic) */
+.td-accent-glow-bg {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, var(--td-accent-soft) 0%, transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Atoms */
+.td-label {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--td-text-muted) !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Inputs & Selects */
+.td-input-wrap {
+  background-color: var(--td-bg-elevated) !important;
+  border: 1px solid var(--td-border-dim) !important;
+  border-radius: 14px !important;
+  padding: 0.625rem 0.875rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-height: 64px !important;
+}
+
+.td-input-wrap:hover {
+  border-color: var(--td-border-bright) !important;
+  transform: translateY(-1px);
+}
+
+.td-input-wrap:focus-within {
+  border-color: var(--td-accent-primary) !important;
+  box-shadow: 0 0 0 4px var(--td-accent-soft) !important;
+}
+
+.td-select-native {
+  background: transparent !important;
+  color: var(--td-text-main) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+}
+
+.td-select-native::-ms-expand {
+  display: none !important;
+}
+
+/* Meta Card Refinement */
+.td-meta-card {
+  background: linear-gradient(145deg, rgba(22, 27, 34, 0.4), rgba(22, 27, 34, 0.1)) !important;
+  border: 1px solid var(--td-border-dim) !important;
+  border-radius: 16px !important;
+  padding: 0.875rem 1.125rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
+.td-meta-card:hover {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.td-meta-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--td-accent-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.td-meta-card:hover::after {
+  opacity: 0.3;
+}
+
+/* Subtask Items */
+.td-subtask-item {
+  background: var(--td-bg-elevated) !important;
+  border: 1px solid var(--td-border-dim) !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.td-subtask-item:hover {
+  border-color: var(--td-accent-primary) !important;
+  transform: translateX(6px) !important;
+}
+
+.td-checkbox {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+  border: 1.5px solid var(--td-border-bright) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.td-checkbox.checked {
+  background: var(--td-accent-primary) !important;
+  border-color: var(--td-accent-primary) !important;
+  box-shadow: 0 0 12px var(--td-accent-soft) !important;
+}
+
+/* Scrollbar Refinement */
+.td-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.td-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.td-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.td-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--td-accent-primary);
+}
+
+/* Utility Animations */
+@keyframes td-pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.td-animate-pulse {
+  animation: td-pulse-glow 2s infinite;
+}
+
+/* Active Editing States */
+.td-edit-input-active {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(0, 209, 255, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.td-edit-input-active:focus {
+  border-color: var(--td-accent-primary) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.1) !important;
+  outline: none !important;
+}
+
+/* Hide Date Input default icons */
+.td-date-input::-webkit-inner-spin-button,
+.td-date-input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+.td-date-input {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.td-edit-area-active {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(0, 209, 255, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 16px !important;
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.td-edit-area-active:focus {
+  border-color: var(--td-accent-primary) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.1) !important;
+  outline: none !important;
+}

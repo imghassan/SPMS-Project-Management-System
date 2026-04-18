@@ -1,0 +1,40 @@
+@import './utilities.css';
+@import './dashboard.css';
+
+/* Sidebar Specific */
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.sidebar-nav-item.active {
+  color: white;
+}
+
+.sidebar-nav-item:not(.active) {
+  color: white;
+}
+
+.sidebar-nav-item:hover {
+  color: #00D1FF;
+}
+
+/* Topbar Specific */
+.search-input {
+  width: 100%;
+  background: #1A2332;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1.5rem 0.625rem 2.75rem;
+  font-size: 13.5px;
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  border-color: rgba(0, 209, 255, 0.4);
+  box-shadow: 0 0 0 1px rgba(0, 209, 255, 0.4);
+}
