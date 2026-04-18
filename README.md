@@ -17,7 +17,7 @@ Then Choose React, and JavaScript
 ### For Server
 1. Open Terminal:
 
-`cd server`
+```cd server```
 
 `npm i express nodemon dotenv cors bycrypt helmet jsonwebtoken mongoose morgan multer jsonwebtoken node-cron socket.io zod`
 
