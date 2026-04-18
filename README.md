@@ -5,7 +5,9 @@
 ### For Client
 1. Open Terminal:
 
-`cd client`
+```bash 
+cd client
+```
 
 `npm create vite@latest .`
 Then Choose React, and JavaScript
